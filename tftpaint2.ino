@@ -10,9 +10,9 @@
 // ver. 1m5 - 13.11.2014, Craiova - Romania
 // Rewritten be Christophe DEMION
 // ver. 1m6 - 19.02.2015, St Just St Rambert - FRANCE
-// rev Added #DEFINE Colours
+// rev Added #define 16 bit Colours, all tested (not all worth it but hey! who can do less can do more!)
 // All tft.setRotation corrected
-// Englisised some variables
+// Englisied some variables
 
 
 // The control pins for the LCD can be assigned to any digital or
@@ -67,37 +67,149 @@
 TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
 
 // Color definitions
+// Comment out the colours you don't need, it'll save some space
 
-#define BLACK       0x0000      /*   0,   0,   0 */
-#define NAVY        0x000F      /*   0,   0, 128 */
-#define DARKGREEN   0x03E0      /*   0, 128,   0 */
-#define DARKCYAN    0x03EF      /*   0, 128, 128 */
-#define MAROON      0x7800      /* 128,   0,   0 */
-#define PURPLE      0x780F      /* 128,   0, 128 */
-#define OLIVE       0x7BE0      /* 128, 128,   0 */
-#define LIGHTGREY   0xC618      /* 192, 192, 192 */
-#define DARKGREY    0x7BEF      /* 128, 128, 128 */
-#define BLUE        0x001F      /*   0,   0, 255 */
-#define GREEN       0x07E0      /*   0, 255,   0 */
-#define CYAN        0x07FF      /*   0, 255, 255 */
-#define RED         0xF800      /* 255,   0,   0 */
-#define MAGENTA     0xF81F      /* 255,   0, 255 */
-#define YELLOW      0xFFE0      /* 255, 255,   0 */
-#define WHITE       0xFFFF      /* 255, 255, 255 */
-#define ORANGE      0xFD20      /* 255, 165,   0 */
-#define GREENYELLOW 0xAFE5      /* 173, 255,  47 */
-#define PINK        0xF81F
-#define SILVER      0xC618
-#define GRAY	    0x8410
-#define MAROON	    0x8000
-#define YELLOW	    0xFFE0
-#define LIME	    0x07E0
-#define AQUA	    0x07FF
-#define TEAL	    0x0410
-#define FUCHSIA	    0xF81F
-#define PURPLE2	    0x8011
-#define ROZ         0xFBE0
-#define GRI         0xBDF7
+#define WHITE			0xFFFF
+#define SNOW			0xFFDE
+#define GHOSTWHITE		0xF7BF
+#define IVORY			0xFFFD
+#define MINTCREAM		0xF7FE
+#define AZURE			0xEFFF
+#define FLORALWHITE		0xFFDD
+#define ALICEBLUE		0xEFBF
+#define LAVENDERBLUSH	        0xFF7E
+#define SEASHELL		0xFFBD
+#define WHITESMOKE		0xF7BE
+#define HONEYDEW		0xEFFD
+#define LIGHTYELLOW		0xFFFB
+#define LIGHTCYAN		0xDFFF
+#define OLDLACE			0xFFBC
+#define CORNSILK		0xFFBB
+#define LINEN			0xF77C
+#define LEMONCHIFFON	        0xFFD9
+#define LIGHTGOLDENRODYELLOW	0xF7D9
+#define BEIGE			0xF7BB
+#define LAVENDER		0xE73E
+#define MISTYROSE		0xFF1B
+#define PAPAYAWHIP		0xFF7A
+#define ANTIQUEWHITE	        0xF75A
+#define BLANCHEDALMOND	        0xFF59
+#define BISQUE			0xFF18
+#define MOCCASIN		0xFF16
+#define GAINSBORO		0xDEDB
+#define PEACHPUFF		0xFED6
+#define PALETURQUOISE	        0xAF7D
+#define NAVAJOWHITE		0xFEF5
+#define PINK			0xFDF9
+#define WHEAT			0xF6F6
+#define PALEGOLDENROD    	0xEF34
+#define LIGHTGREY		0xD69A
+#define LIGHTPINK		0xFDB7
+#define POWDERBLUE		0xAEFC
+#define THISTLE			0xD5FA
+#define LIGHTBLUE		0xAEBC
+#define KHAKI			0xEF31
+#define VIOLET			0xEC1D
+#define PLUM			0xDCFB
+#define LIGHTSTEELBLUE    	0xAE1B
+#define AQUAMARINE		0x7FFA
+#define LIGHTSKYBLUE	        0x867E
+#define SILVER			0xBDF7
+#define SKYBLUE			0x867D
+#define PALEGREEN		0x97D2
+#define ORCHID			0xD37A
+#define BURLYWOOD		0xDDB0
+#define HOTPINK			0xFB56
+#define LIGHTSALMON		0xFCEE
+#define TAN			0xCD91
+#define LIGHTGREEN		0x8F71
+#define YELLOW			0xFFE0
+#define FUCHSIA			0xF81F
+#define MAGENTA			0xF81F
+#define AQUA			0x07FF
+#define CYAN			0x07FF
+#define DARKGRAY		0xA554
+#define DARKSALMON		0xE4AE
+#define SANDYBROWN		0xF50B
+#define LIGHTCORAL		0xEBEF
+#define TURQUOISE		0x3EF9
+#define SALMON			0xF3ED
+#define CORNFLOWERBLUE	        0x64BD
+#define MEDIUMTURQUOISE	        0x4699
+#define MEDIUMORCHID	        0xB2BA
+#define DARKKHAKI		0xBDAD
+#define PALEVIOLETRED	        0xDB72
+#define MEDIUMPURPLE	        0x937B
+#define MEDIUMAQUAMARINE	0x6674
+#define GREENYELLOW		0xAFE5
+#define ROSYBROWN		0xBC71
+#define DARKSEAGREEN	        0x8DD1
+#define GOLD			0xFEA0
+#define MEDIUMSLATEBLUE	        0x7B3D
+#define CORAL			0xFBE9
+#define DEEPSKYBLUE		0x05FF
+#define DODGERBLUE		0x1C7F
+#define TOMATO			0xFB08
+#define DEEPPINK		0xF892
+#define ORANGE			0xFD20
+#define ORANGEPINK      0xFBE0
+#define GOLDENROD		0xD523
+#define DARKTURQUOISE	        0x0679
+#define CADETBLUE		0x5CF3
+#define YELLOWGREEN		0x9665
+#define LIGHTSLATEGRAY	        0x7432
+#define DARKORCHID		0x9199
+#define BLUEVIOLET		0x815B
+#define MEDIUMSPRINGGREEN	0x07D2
+#define PERU			0xCC27
+#define SLATEBLUE		0x62D9
+#define DARKORANGE		0xFC40
+#define ROYALBLUE		0x3B5B
+#define INDIANRED		0xCACB
+#define GRAY			0x7BEF
+#define SLATEGRAY		0x6BF1
+#define CHARTREUSE		0x7FE0
+#define SPRINGGREEN		0x07EF
+#define STEELBLUE		0x4416
+#define LIGHTSEAGREEN	        0x1D94
+#define LAWNGREEN		0x7FC0
+#define DARKVIOLET		0x901A
+#define MEDIUMVIOLETRED	        0xC0B0
+#define MEDIUMSEAGREEN	        0x3D8D
+#define CHOCOLATE		0xCB43
+#define DARKGOLDENROD	        0xB421
+#define ORANGERED		0xFA20
+#define DIMGRAY			0x634C
+#define LIMEGREEN		0x2E65
+#define CRIMSON			0xD887
+#define SIENNA			0x9A85
+#define OLIVEDRAB		0x6C64
+#define DARKMAGENTA		0x8811
+#define DARKCYAN		0x0451
+#define DARKSLATEBLUE	        0x41F1
+#define SEAGREEN		0x2C4A
+#define OLIVE			0x7BE0
+#define PURPLE			0x780F
+#define TEAL			0x03EF
+#define RED			0xF800
+#define LIME			0x07E0
+#define BLUE			0x001F
+#define BROWN			0xA144
+#define FIREBRICK		0xA903
+#define DARKOLIVEGREEN	        0x5345
+#define SADDLEBROWN		0x8A22
+#define FORESTGREEN		0x1C43
+#define INDIGO			0x480F
+#define DARKSLATEGRAY	        0x2A69
+#define MEDIUMBLUE		0x0019
+#define MIDNIGHTBLUE	        0x10CD
+#define DARKRED			0x8800
+#define DARKBLUE		0x0011
+#define MAROON			0x7800
+#define GREEN			0x03E0
+#define NAVY			0x000F
+#define DARKGREEN		0x0300
+#define BLACK			0x0000
 
 Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);;
 
@@ -177,8 +289,8 @@ tft.setRotation(2);
   tft.fillRect(0, BOXSIZE*3, BOXSIZE, BOXSIZE, CYAN);
   tft.fillRect(0, BOXSIZE*4, BOXSIZE, BOXSIZE, BLUE);
   tft.fillRect(0, BOXSIZE*5, BOXSIZE, BOXSIZE, MAGENTA);
-  tft.fillRect(0, BOXSIZE*6, BOXSIZE, BOXSIZE, GRI);
-  tft.fillRect(0, BOXSIZE*7, BOXSIZE, BOXSIZE,  ROZ);
+  tft.fillRect(0, BOXSIZE*6, BOXSIZE, BOXSIZE, SILVER);
+  tft.fillRect(0, BOXSIZE*7, BOXSIZE, BOXSIZE,  ORANGE);
 //tft.fillRect(BOXSIZE, BOXSIZE, BOXSIZE, BOXSIZE, WHITE);
 
   tft.drawRect(0, 0, BOXSIZE, BOXSIZE, WHITE);
@@ -254,11 +366,11 @@ if (p.y < (TS_MINY-5)) erase();
          tft.drawRect(0,BOXSIZE*5, BOXSIZE, BOXSIZE, WHITE);
 //         text (currentcolor);
        } else if (p.y < BOXSIZE*7) {
-         currentcolor = GRI;
+         currentcolor = SILVER;
          tft.drawRect(0,BOXSIZE*6, BOXSIZE, BOXSIZE, WHITE);
 //         text (currentcolor);
        } else if (p.y < BOXSIZE*8) {
-         currentcolor = ROZ;
+         currentcolor = ORANGE;
          tft.drawRect(0,BOXSIZE*7, BOXSIZE, BOXSIZE, WHITE);
          erase();
        }
@@ -272,8 +384,8 @@ if (p.y < (TS_MINY-5)) erase();
           if (oldcolor == CYAN) tft.fillRect(0, BOXSIZE*3, BOXSIZE, BOXSIZE, CYAN);
           if (oldcolor == BLUE) tft.fillRect(0, BOXSIZE*4, BOXSIZE, BOXSIZE, BLUE);
           if (oldcolor == MAGENTA) tft.fillRect(0, BOXSIZE*5, BOXSIZE, BOXSIZE, MAGENTA);
-          if (oldcolor == GRI) tft.fillRect(0, BOXSIZE*6, BOXSIZE, BOXSIZE, GRI);
-          if (oldcolor == ROZ) tft.fillRect(0, BOXSIZE*7, BOXSIZE, BOXSIZE, ROZ);
+          if (oldcolor == SILVER) tft.fillRect(0, BOXSIZE*6, BOXSIZE, BOXSIZE, SILVER);
+          if (oldcolor == ORANGE) tft.fillRect(0, BOXSIZE*7, BOXSIZE, BOXSIZE, ORANGE);
      number (currentcolor);
      }
 
@@ -344,8 +456,8 @@ void erase ()
   tft.fillRect(0, BOXSIZE*3, BOXSIZE, BOXSIZE, CYAN);
   tft.fillRect(0, BOXSIZE*4, BOXSIZE, BOXSIZE, BLUE);
   tft.fillRect(0, BOXSIZE*5, BOXSIZE, BOXSIZE, MAGENTA);
-  tft.fillRect(0, BOXSIZE*6, BOXSIZE, BOXSIZE, GRI);
-  tft.fillRect(0, BOXSIZE*7, BOXSIZE, BOXSIZE,  ROZ);
+  tft.fillRect(0, BOXSIZE*6, BOXSIZE, BOXSIZE, SILVER);
+  tft.fillRect(0, BOXSIZE*7, BOXSIZE, BOXSIZE,  ORANGE);
 //tft.fillRect(BOXSIZE, BOXSIZE, BOXSIZE, BOXSIZE, WHITE);
 
   tft.drawRect(0, 0, BOXSIZE, BOXSIZE, WHITE);
